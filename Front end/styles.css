@@ -1,6 +1,12 @@
 
 
 
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -156,6 +162,7 @@ body {
     border: 2px solid transparent;
     overflow: hidden;
     height: calc(80vh - 150px); /* Adjust the vertical height */
+    margin-left: 10px;
 }
 
 .browse-files {
@@ -168,6 +175,7 @@ body {
     border: 1px solid transparent;
     overflow: hidden;
     height: calc(80vh - 150px); 
+    margin-right: 10px;
 }
 
 .add-files{
@@ -298,3 +306,8 @@ body {
     max-width: 70%;
 }
 
+.file-name {
+    color: white;
+    margin-top: 5px; /* Adjust the margin as needed */
+    font-family: Arial, Helvetica, sans-serif;
+}

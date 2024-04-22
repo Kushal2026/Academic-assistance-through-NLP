@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Woxsen AI</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
     <div class="navbar">
@@ -13,8 +14,6 @@
             <div class="icon">
                 <img src="K.png" alt="Account" class="icon-image">
             </div>
-            
-        
         </div>
     </div>
     <div class="background-container">
@@ -26,18 +25,16 @@
             <div class="chatbox" id="chatbox">
                 <div class="chat-message chatbot-info">Welcome to our chat! How can I assist you today?</div>
             </div>
-            
         </div>
-        <div class = "browse-files">
-            <div class = add-files>
-                <span class = "add-files-text"> Add Files here  </span>
-                <button id="browse" > Browse Files </button>
-
+        <div class="browse-files">
+            <div class="add-files">
+                <span class="add-files-text">Add Files here</span>
+                <!-- Input element for file upload -->
+                <input type="file" id="file-input" accept=".pdf">
             </div>
-            
-
+            <!-- Display the uploaded file name -->
+            <span id="file-name" class="file-name"></span>
         </div>
-        
     </div>
 
     <script>
@@ -68,6 +65,16 @@
                     chatbox.scrollTop = chatbox.scrollHeight;
                 }
             }
+
+            // Handle file input change event
+            const fileInput = document.getElementById("file-input");
+            const fileNameDisplay = document.getElementById("file-name");
+            fileInput.addEventListener("change", function(event) {
+                const fileList = event.target.files;
+                const fileName = fileList[0].name;
+                // Update the file name display
+                fileNameDisplay.textContent = "Uploaded file: " + fileName;
+            });
         });
     </script>
 </body>
